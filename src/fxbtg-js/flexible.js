@@ -108,7 +108,7 @@
             val += 'px';
         }
         return val;
-    }
+    };
     flexible.px2rem = function(d) {
         var val = parseFloat(d) / this.rem;
         if (typeof d === 'string' && d.match(/px$/)) {
@@ -118,3 +118,4 @@
     }
 
 })(window, window['lib'] || (window['lib'] = {}));
+

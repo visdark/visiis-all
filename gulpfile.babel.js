@@ -9,7 +9,7 @@ import cleancss from 'gulp-clean-css';
 import debug from 'gulp-debug';
 import htmlmin from 'gulp-htmlmin';
 import template from 'gulp-template';
-
+import uglify from 'gulp-uglify';
 
 //默认任务
 
@@ -46,3 +46,12 @@ gulp.task('html',function(){
         .pipe(gulp.dest('./dist/fxbtg/'))
         .pipe(debug({title: '成功执行HTML压缩'}));
 });
+
+// 压缩JS
+gulp.task('javascripts', function() {
+    gulp.src('./src/fxbtg-js/*.js')
+        .pipe(uglify())
+        .pipe(debug({title: '正在压缩js文件'}))
+        .pipe(gulp.dest('./dist/fxbtg/js/'));
+});
+
