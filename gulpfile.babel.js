@@ -55,3 +55,4 @@ gulp.task('javascripts', function() {
         .pipe(gulp.dest('./dist/fxbtg/js/'));
 });
 
+// 编译less并压缩
