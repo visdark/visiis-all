@@ -1,11 +1,8 @@
-# Created by .ignore support plugin (hsz.mobi)
 .gitignore
 .idea/
 weui/
 Font-Awesome/
 Swiper/
-Would skip repository Font-Awesome/
-Would skip repository Swiper/
 dist/fxbtg/js/flexible-compiled.js
 dist/fxbtg/js/flexible-compiled.js.map
 dist/fxbtg/js/zepto.min-compiled.js
@@ -15,4 +12,4 @@ gulpfile.babel-compiled.js.map
 node_modules/
 src/fxbtg-js/flexible-compiled.js
 src/fxbtg-js/flexible-compiled.js.map
-Would skip repository weui/
+
