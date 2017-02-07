@@ -24,6 +24,7 @@
     "gulp-clean-css": "^2.4.0",
     "gulp-debug": "^3.0.0",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-less": "^3.3.0",
     "gulp-template": "^4.0.0",
     "gulp-uglify": "^2.0.1",
     "ruby": "^0.6.1"

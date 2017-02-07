@@ -26,13 +26,13 @@ var browserSync = require('browser-sync').create();
 gulp.task('browser', function() {
     browserSync.init({
         server: {
-            baseDir: "./dist/fxbtg"
+            baseDir: "./dist/fxbtg/"
         }
     });
 });
 
 // 压缩html
-gulp.task('html',function(){
+gulp.task('min-html',function(){
     gulp.src('./src/fxbtg-html/*.html')
         .pipe(debug({title: '正在编译静态文件'}))
         .pipe(template({pkg: require('./package.json')}))
@@ -48,11 +48,17 @@ gulp.task('html',function(){
 });
 
 // 压缩JS
-gulp.task('javascripts', function() {
+gulp.task('min-js', function() {
     gulp.src('./src/fxbtg-js/*.js')
         .pipe(uglify())
         .pipe(debug({title: '正在压缩js文件'}))
         .pipe(gulp.dest('./dist/fxbtg/js/'));
 });
 
-// 编译less并压缩
+// 压缩CSS
+gulp.task('min-css',function() {
+    gulp.src(['./src/fxbtg-less/vis-*.css'])
+        .pipe(cleancss())
+        .pipe(debug({title: '正在压缩css文件'}))
+        .pipe(gulp.dest('./dist/fxbtg/css/'));
+});
