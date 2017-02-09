@@ -40,7 +40,8 @@ gulp.task('min-html',function(){
         .pipe(
             htmlmin({collapseWhitespace: true ,
                 removeComments: true,
-                minifyJS:true
+                minifyJS: true,//压缩页面JS
+                minifyCSS: true//压缩页面CSS
             }))
         .pipe(debug({title: '正在移动静态文件'}))
         .pipe(gulp.dest('./dist/fxbtg/'))
@@ -61,4 +62,10 @@ gulp.task('min-css',function() {
         .pipe(cleancss())
         .pipe(debug({title: '正在压缩css文件'}))
         .pipe(gulp.dest('./dist/fxbtg/css/'));
+});
+
+// 监视自动化
+gulp.task('watch',function(){
+    gulp.watch('./src/fxbtg-less/vis-*.css',['min-css']);
+    gulp.watch('./src/fxbtg-html/*.html',['min-html']);
 });

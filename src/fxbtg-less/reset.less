@@ -2,6 +2,7 @@
 @import "./set";
 @import "./base";
 
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -10,6 +11,8 @@ html {
 body {
   line-height: 1.6;
   font-family: @vis-FontDefault;
+  width: 100%;
+  background-color: @vis-BgColorDefault;
 }
 
 * {
@@ -24,4 +27,41 @@ a img {
 a {
   text-decoration: none;
   .setTapColor();
+}
+
+// 图片默认
+img {
+  border-style: none;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container{
+  display: block;
+  width: 10rem;
+  margin: 0 auto;
+  font-size: 12px;
+  background-color: white;
+}
+
+//通用首页顶部
+.top-logo{
+  background-color: @vis-ColorBgmain;
+  color: white;
+  height: 1rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: @S;
 }

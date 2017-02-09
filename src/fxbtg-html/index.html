@@ -9,59 +9,128 @@
     <meta name="keywords" content="<%= pkg.keywords %>"/>
     <meta name="description" content="<%= pkg.license %>"/>
     <title>Title</title>
-
     <script src="js/flexible.js"></script><!-- 缩放屏幕比例 -->
     <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- 图标库 -->
+    <link rel="stylesheet" href="css/swiper.min.css"> <!-- 插件：滑动 -->
     <link rel="stylesheet" href="css/vis-app.css"> <!-- 主框架文件 -->
     <link rel="stylesheet" href="css/vis-index.css"> <!-- 首页专属样式表 -->
 </head>
 <body>
 
+<header>
+    <div class="container">
+       <div class="top-logo">
+           下拉顶部才显示区域
+       </div>
+    </div>
+</header>
 
-<h1>图标库</h1>
-<h3>WE-UI 9</h3>
-                <i class="vis-icon-success"></i>
-                <i class="vis-icon-success-no-circle"></i>
-                <i class="vis-icon-waiting"></i>
-                <i class="vis-icon-circle"></i>
-                <i class="vis-icon-warn"></i>
-                <i class="vis-icon-download"></i>
-                <i class="vis-icon-info-circle"></i>
-                <i class="vis-icon-cancel"></i>
-                <i class="vis-icon-search"></i>
-<h3>Awesome 675</h3>
-<h5>新图标 41</h5>
-<i class="fa fa-address-book" aria-hidden="true"></i>
-<i class="fa fa-address-book-o" aria-hidden="true"></i>
-<i class="fa fa-address-card" aria-hidden="true"></i>
-<i class="fa fa-address-card-o" aria-hidden="true"></i>
-<h6>其他图标请参照文档</h6>
-http://fontawesome.io/icons/
-<h3>按钮库</h3>
+<section class="index">
+    <div class="container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="src/a.jpg" style="width:100%; height:6rem;" class="antimoderate"
+                                               data-antimoderate-idata=""></div>
+                <div class="swiper-slide"><img src="src/b.jpg" style="width:100%; height:6rem;" class="antimoderate"
+                                               data-antimoderate-idata=""></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+</section>
 
-
-    <a href="javascript:window.open('visiis.html','_top');" class="vis-btn vis-btn_primary">转到VISIIS主框架</a>
-    <a href="javascript:;" class="vis-btn vis-btn_primary vis-btn_loading"><i class="vis-loading"></i>页面主操作 Loading</a>
-    <a href="javascript:;" class="vis-btn vis-btn_disabled vis-btn_primary">页面主操作 Disabled</a>
-    <a href="javascript:;" class="vis-btn vis-btn_default">页面次要操作 Normal</a>
-    <a href="javascript:;" class="vis-btn vis-btn_default vis-btn_loading"><i class="vis-loading"></i>页面次操作 Loading</a>
-    <a href="javascript:;" class="vis-btn vis-btn_disabled vis-btn_default">页面次要操作 Disabled</a>
-    <a href="javascript:;" class="vis-btn vis-btn_warn">警告类操作 Normal</a>
-    <a href="javascript:;" class="vis-btn vis-btn_warn vis-btn_loading"><i class="vis-loading"></i>警告类操作 Loading</a>
-    <a href="javascript:;" class="vis-btn vis-btn_disabled vis-btn_warn">警告类操作 Disabled</a>
-
-
-        <a href="javascript:;" class="vis-btn vis-btn_plain-default">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_plain-default vis-btn_plain-disabled">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_plain-primary">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_plain-primary vis-btn_plain-disabled">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_mini vis-btn_primary">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_mini vis-btn_default">按钮</a>
-        <a href="javascript:;" class="vis-btn vis-btn_mini vis-btn_warn">按钮</a>
-
-
-
-
-
+<footer>
+</footer>
 </body>
+<!-- 主JS框架 -->
+
+<script src="js/zepto.min.js"></script><!-- zeptojs -->
+<!-- JS插件 -->
+<script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
+<script src="js/antimoderate.min.js"></script><!-- 插件：图片加载优化 -->
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    var antimoderate_images = document.querySelectorAll('.antimoderate');
+    for (var i = 0; i < antimoderate_images.length; ++i) {
+        var img = antimoderate_images[i];
+        AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"), img.getAttribute("data-antimoderate-scale"));
+    }
+</script>
 </html>
