@@ -1,0 +1,50 @@
+<transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
+    <div v-if="!show" class="tree">
+        <div>1111
+        </div>
+    </div>
+</transition>
+<footer>
+    <div id="foot">
+        <div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i
+                class="visiis vis-home"></i><h4>首页</h4></a><a class="col nav-a" href="down.html" data-rel="auto"><i
+                class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="tntv.html" data-rel="auto"><i
+                class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i
+                class="visiis vis-me"></i><h4>我的</h4></a>
+            <a class="col more" @click="show = !show" href="#index"><i class="visiis vis-more"></i><h4>更多</h4></a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+<!-- 主JS框架 -->
+<script src="js/zepto.min.js"></script><!-- zeptojs -->
+<!-- JS插件 -->
+<script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
+</html>
+<script>
+    /*============================================
+     顶部导航
+     ==============================================*/
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() < 10) {
+                $('#main-nav').removeClass('scrolled');
+            }
+            else {
+                $('#main-nav').addClass('scrolled');
+            }
+        });
+    });
+    /*============================================
+     滑动导航组件
+     ==============================================*/
+    new Vue({
+        el: '#index',
+        data: {
+            show: true
+        }
+    })
+
+</script>
+

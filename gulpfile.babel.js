@@ -10,7 +10,7 @@ import debug from 'gulp-debug';
 import htmlmin from 'gulp-htmlmin';
 import template from 'gulp-template';
 import uglify from 'gulp-uglify';
-
+import fileinclude from 'gulp-file-include';
 //默认任务
 
 gulp.task('default', function() {
@@ -33,7 +33,7 @@ gulp.task('browser', function() {
 
 // 压缩html
 gulp.task('min-html',function(){
-    gulp.src('./src/fxbtg-html/*.html')
+    gulp.src(['./src/fxbtg-html/*.html','!./src/fxbtg-html/include/**.html','!./src/fxbtg-html/html/**.html'])
         .pipe(debug({title: '正在编译静态文件'}))
         .pipe(template({pkg: require('./package.json')}))
         .pipe(debug({title: '正在压缩静态文件'}))
@@ -46,6 +46,17 @@ gulp.task('min-html',function(){
         .pipe(debug({title: '正在移动静态文件'}))
         .pipe(gulp.dest('./dist/fxbtg/'))
         .pipe(debug({title: '成功执行HTML压缩'}));
+});
+
+//引入框架文件
+gulp.task('include', function() {
+    // 适配html中所有文件夹下的所有html，排除html下的include文件夹中html
+    gulp.src(['./src/fxbtg-html/html/*.html','!./src/fxbtg-html/include/**.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./src/fxbtg-html/'));
 });
 
 // 压缩JS
@@ -67,5 +78,6 @@ gulp.task('min-css',function() {
 // 监视自动化
 gulp.task('watch',function(){
     gulp.watch('./src/fxbtg-less/vis-*.css',['min-css']);
+    gulp.watch(['./src/fxbtg-html/html/*.html','./src/fxbtg-html/include/**.html'],['include']);
     gulp.watch('./src/fxbtg-html/*.html',['min-html']);
 });

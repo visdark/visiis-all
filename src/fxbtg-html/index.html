@@ -8,129 +8,240 @@
     <meta name="Copyright" content="<%= pkg.author %>"/>
     <meta name="keywords" content="<%= pkg.keywords %>"/>
     <meta name="description" content="<%= pkg.license %>"/>
-    <title>Title</title>
+    <title>{{Title}}</title>
     <script src="js/flexible.js"></script><!-- 缩放屏幕比例 -->
     <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- 图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_10fchrgpf7x03sor.css">
     <link rel="stylesheet" href="css/swiper.min.css"> <!-- 插件：滑动 -->
     <link rel="stylesheet" href="css/vis-app.css"> <!-- 主框架文件 -->
+    <link rel="stylesheet" href="css/vis-do.css"> <!-- 插件：动画库 -->
     <link rel="stylesheet" href="css/vis-index.css"> <!-- 首页专属样式表 -->
+    <script src="js/vue.min.js"></script><!-- vue -->
+    <script src="js/vue-router.min.js"></script><!-- 路由 -->
 </head>
 <body>
-
 <header>
     <div class="container">
-       <div class="top-logo">
-           下拉顶部才显示区域
-       </div>
+        <div class="top-nav" id="main-nav">
+            <div class="box">
+                TNTV-中国唯一一家专注于外汇投资的财经频道
+            </div>
+        </div>
     </div>
 </header>
-
+<div id="index">
+<transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+<div v-if="show">
+<!-- 焦点图 -->
 <section class="index">
     <div class="container">
-        <div class="swiper-container">
+        <div class="swiper-container" id="swiper-top">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="src/a.jpg" style="width:100%; height:6rem;" class="antimoderate"
-                                               data-antimoderate-idata=""></div>
-                <div class="swiper-slide"><img src="src/b.jpg" style="width:100%; height:6rem;" class="antimoderate"
-                                               data-antimoderate-idata=""></div>
+                <div class="swiper-slide"><img src="src/a.jpg" style="width:100%; height:6rem;"></div>
+                <div class="swiper-slide"><img src="src/b.jpg" style="width:100%; height:6rem;"></div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+    </div>
+</section>
+<!-- 产品列表 -->
+<section class="index">
+    <div class="container">
+        <div class="" id="pro-list">
+            <div class="flex flex-box wrap avg-4 bordered">
+                <a href="product.html#/1" class="col pro"><img src="src/p-1.png">
+                    外汇</a>
+                <a href="product.html#/2" class="col pro"><img src="src/P-2.png">
+                    贵金属</a>
+                <a href="product.html#/3" class="col pro"><img src="src/p-3.png">
+                    能源</a>
+                <a href="product.html#/4" class="col pro"><img src="src/p-4.png">
+                    股指</a>
+                <a href="product.html#/5" class="col pro"><img src="src/P-5.png">
+                    农产品</a>
+                <a href="product.html#/6" class="col pro"><img src="src/p-6.png">
+                    差价合约</a>
+                <a href="product.html#/7" class="col pro"><img src="src/p-7.png">
+                    原油</a>
+                <a href="product.html#/8" class="col pro"><img src="src/P-8.png">
+                    其他</a></div>
+        </div>
     </div>
 </section>
 
+<!-- 广告列表1 -->
+<section class="index">
+    <div class="container">
+        <div id="ad-list1">
+            <div class="flex box bordered">
+                <div class="col">
+                    <a href="#" class="ad"><img src="src/top-ad-main.png">
+                        <div class="con"><h4>平台下载</h4>
+                            <p>提供电脑端、移动端MT4</p><span class="btn">了解详情</span></div>
+                    </a>
+                </div>
+                <div class="col">
+                    <div class="flex column bordered">
+                        <div class="col">
+                            <a href="#" class="ad"><img src="src/top-ad-5.png">
+                                <div class="con"><h4></h4>
+                                    <p>全国第一家金融TV</p><span class="btn">观看节目</span></div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="ad"><img src="src/top-ad-6.png">
+                                <div class="con"><h4>财经日历</h4>
+                                    <p>最及时可靠的动态播报</p><span class="btn">了解详情</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 广告列表2 -->
+<section class="index">
+    <div class="container">
+        <div class="" id="ad-list2">
+            <div class="flex box wrap avg-2 bordered"><a href="#" class="col ad"><img src="src/top-ad-1.png">
+                <div class="con"><h4>合作加盟</h4>
+                    <p>与FXBTG探寻新的发展机会</p><span class="btn">了解详情</span></div>
+            </a><a href="#" class="col ad"><img src="src/top-ad-2.png">
+                <div class="con"><h4>每日汇评</h4>
+                    <p>我们追逐梦想，一往无前</p><span class="btn">了解详情</span></div>
+            </a><a href="#" class="col ad"><img src="src/top-ad-3.png">
+                <div class="con"><h4>账户类型</h4>
+                    <p>两种账户供君选择</p><span class="btn">了解详情</span></div>
+            </a><a href="#" class="col ad"><img src="src/top-ad-4.png">
+                <div class="con"><h4>视频中心</h4>
+                    <p>最前沿的视觉盛宴</p><span class="btn">了解详情</span></div>
+            </a></div>
+        </div>
+    </div>
+</section>
+<!-- 新闻活动列表 -->
+<section id="news">
+    <div class="container">
+        <div class="box-act">
+            <div class="tit"><i class="visiis vis-notice"></i> 精彩活动</div>
+            <div class="con">
+                <div class="flex wrap col-left"><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>合作加盟</h4>
+                        <p>与FXBTG探寻新的发展机会</p></div>
+                </a><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>每日汇评</h4>
+                        <p>我们追逐梦想，一往无前</p></div>
+                </a><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>账户类型</h4>
+                        <p>两种账户供君选择</p></div>
+                </a><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>视频中心</h4>
+                        <p>最前沿的视觉盛宴</p></div>
+                </a><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>合作加盟</h4>
+                        <p>与FXBTG探寻新的发展机会</p></div>
+                </a><a href="#" class="col col-3">
+                    <div class="new-pics"><img src="src/new-demo.jpg"><h4>每日汇评</h4>
+                        <p>我们追逐梦想，一往无前</p></div>
+                </a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 推送信息 -->
+<section>
+    <div class="container" id="day">
+        <div class="tit"><i class="visiis vis-notice"></i> 金融推送</div>
+        <div class="con">
+            <div class="day flex wrap">
+                <div class="col col-1">每日汇评</div>
+                <div class="col col-2"><span>16年12月13日</span><span><b>December</b>2016</span></div>
+                <div class="col col-3"><span>13</span></div>
+            </div>
+            <div class="day-con"><h3>FXBTG:冻产协议达成，油价暴涨10%</h3>
+                <div><h4>行情回顾</h4>
+                    <p>
+                        昨天（11月30日），受欧佩克达成减产协议推动，油价暴涨10%，使得全球风险资产再次受到追捧，黄金、日元等避险资产严重受到打压，其中黄金价格跌至10个月低位，美元兑日元日内急升1.9%，至3月2日以来最高114.53。此外，于昨晚间公布的美国11月ADP就业人数增加了21.6万人，数据公布后，市场对周五非农就业数据预期表示乐观，美元大幅上扬，，再度打压金银价格。</p>
+                    <h4>市场概况</h4>
+                    <p>
+                        昨天（11月30日），受欧佩克达成减产协议推动，油价暴涨10%，使得全球风险资产再次受到追捧，黄金、日元等避险资产严重受到打压，其中黄金价格跌至10个月低位，美元兑日元日内急升1.9%，至3月2日以来最高114.53。此外，于昨晚间公布的美国11月ADP就业人数增加了21.6万人，数据公布后，市场对周五非农就业数据预期表示乐观，美元大幅上扬，，再度打压金银价格。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</transition>
+
+
+
+
+
+
+
+
+
+
+<transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
+    <div v-if="!show" class="tree">
+        <div>1111
+        </div>
+    </div>
+</transition>
 <footer>
+    <div id="foot">
+        <div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i
+                class="visiis vis-home"></i><h4>首页</h4></a><a class="col nav-a" href="down.html" data-rel="auto"><i
+                class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="tntv.html" data-rel="auto"><i
+                class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i
+                class="visiis vis-me"></i><h4>我的</h4></a>
+            <a class="col more" @click="show = !show" href="#index"><i class="visiis vis-more"></i><h4>更多</h4></a>
+        </div>
+    </div>
 </footer>
+</div>
 </body>
 <!-- 主JS框架 -->
-
 <script src="js/zepto.min.js"></script><!-- zeptojs -->
 <!-- JS插件 -->
 <script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
-<script src="js/antimoderate.min.js"></script><!-- 插件：图片加载优化 -->
+</html>
+<script>
+    /*============================================
+     顶部导航
+     ==============================================*/
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() < 10) {
+                $('#main-nav').removeClass('scrolled');
+            }
+            else {
+                $('#main-nav').addClass('scrolled');
+            }
+        });
+    });
+    /*============================================
+     滑动导航组件
+     ==============================================*/
+    new Vue({
+        el: '#index',
+        data: {
+            show: true
+        }
+    })
+
+</script>
+
+
 
 <script>
+    /*============================================
+     顶部焦点图 （仅首页）
+     ==============================================*/
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         paginationClickable: true
     });
-    var antimoderate_images = document.querySelectorAll('.antimoderate');
-    for (var i = 0; i < antimoderate_images.length; ++i) {
-        var img = antimoderate_images[i];
-        AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"), img.getAttribute("data-antimoderate-scale"));
-    }
 </script>
-</html>

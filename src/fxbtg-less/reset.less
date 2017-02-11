@@ -46,22 +46,279 @@ img {
 }
 
 //通用首页顶部
-.top-logo{
+#main-nav{
+  -webkit-transition: all .3s ease-out; transition: all .3s ease-out;
+}
+.top-nav{
+  height: 0;
+  display: block;
+  width: 10rem;
+  margin: 0 auto;
+  z-index: 999;
+  position: fixed;
+  overflow: hidden;
   background-color: @vis-ColorBgmain;
   color: white;
-  height: 1rem;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
   font-size: @S;
+  .center();
+  &.scrolled{
+    height: 1rem;
+  }
+  .box{
+    width: 9rem;
+    margin: 0 auto;
+    border: solid 1px black;
+    background-color: white;
+    color: black;
+    height: .6rem;
+    display: block;
+    .center();
+    border-radius: 100px;
+  }
+}
+
+.index {
+  .container {
+    background-color: @vis-BgColorDefault;
+    #swiper-top {
+      margin-bottom: @vis-margin;
+      background-color: white;
+    }
+  }
+}
+
+//产品列表页面
+#pro-list{
+  margin-top: @vis-margin;
+  margin-bottom: @vis-margin;
+  background-color: white;
+  .center();
+  height: 6rem;
+  a{
+    font-size: @M;
+    line-height: .75rem;
+    color: black;
+    img{
+      width: 100%;
+      height: auto;
+      max-width: 2rem;
+      max-height: 2rem;
+      padding: .25rem .25rem 0 .25rem;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+//广告列表页面1
+#ad-list1 ,#ad-list2{
+  margin-top: @vis-margin;
+  margin-bottom: @vis-margin;
+  background-color: white;
+  height: 5rem;
+  .column {
+    flex-direction: column;
+    height: 5rem;
+  }
+}
+.ad{
+  position: relative;
+  width: 5rem;
+  height: 2.5rem;
+  display: block;
+  img{
+    position: absolute;
+  }
+  .con{
+    padding: .25rem;
+    position: absolute;
+    h4{
+      font-size: @L;
+      font-weight: bolder;
+      height: 0.8rem;
+      line-height: 0.8rem;
+color: black;
+    }
+    p{
+      font-size: @S;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      color: black;
+      .ellipsis();
+    }
+    span.btn{
+      .ellipsis();
+      font-size: .2rem;
+      width: 1.2rem;
+      padding: .1rem;
+      line-height: .2rem;
+      display: block;
+      border: 1px solid #DDD;
+      border-radius: 100px;
+      text-align: center;
+      color: black;
+    }
+  }
+}
+// 页脚样式表
+footer{padding-bottom: 1.6rem}
+#foot{
+  position: fixed;
+  height: 1.7rem;
+  width: 100%;
+  bottom: 0;
+  z-index: 999999999999;
+  .navbar{
+    width: 10rem;
+    margin: 0 auto;
+    height: 1.7rem;
+    background-color: @vis-ColorBgmain;
+    bottom: 0;
+    z-index: 9999999;
+    text-align: center;
+    .col {
+      color: white;
+      i {
+        font-size: .8rem;
+        line-height: 1rem;
+        height: 1rem;
+      }
+      h4 {
+        font-size: @M;
+        line-height: .5rem;
+        height: .5rem;
+      }
+    }
+    a.col.active{
+      color: @vis-ColorFxbtg;
+    }
+  }
+}
+
+// 活动样式列表
+#news .box-act {
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: @vis-margin;
+  .tit {
+    padding: .2rem;
+    border-bottom: 1px solid silver;
+    font-size: @M;
+    line-height: .5rem;
+  }
+  .con {
+    padding: .2rem 0 0 .2rem;
+    .col-left {
+      width: 9.8rem;
+      justify-content: space-between;
+      a.col {
+        display: block;
+        padding-bottom:.2rem ;
+        .new-pics{
+          display: block;
+          padding-right: .2rem;
+          color: black;
+          img {
+            height: auto;
+          }
+          h4{
+            padding-top: .2rem;
+            font-size: @L;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            .ellipsis;
+          }
+
+          p{
+            font-size: @M;
+            color: gray;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            .ellipsis;
+            padding-bottom: .2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 金融推送
+#day{
+  background-color: white;
+  overflow: hidden;
+  .tit {
+    padding: .2rem;
+    border-bottom: 1px solid silver;
+    font-size: @M;
+    line-height: .5rem;
+  }
+  .con{
+    .day{
+      padding-top: .2rem;
+      height: 1rem;
+      overflow: hidden;
+      .col-1{
+        text-align: center;
+        font-size: @M;
+        line-height: 1rem;
+        height: 1rem;
+        color: white;
+        background-color: @vis-ColorFxbtg;
+
+      }
+      .col-2{
+        font-size: @M;
+        color: black;
+        span{
+          line-height: .5rem;
+          padding-right:.2rem ;
+          height: .5rem;
+          float: right;
+          display: block;
+        }
+      }
+      .col-3{
+        border-bottom: solid .1rem @vis-ColorFxbtg;
+        span{
+          font-size: .5rem;
+          min-width: .6rem;
+          padding: .1rem;
+          color: white;
+          float: left;
+          background-color: @vis-ColorFxbtg;
+        }
+      }
+    }
+    .day-con{
+      padding: .2rem;
+      h3{
+        padding-top:.3rem;
+        line-height: .8rem;
+        padding-bottom:.3rem;
+      }
+      h4{
+        background-color: #f5f4f4;
+        padding: .2rem;
+      }
+      p{
+        padding-top: .2rem;
+        font-size: @M;
+        line-height: .6rem;
+        text-align: justify;
+        padding-bottom: .2rem;
+      }
+    }
+  }
+}
+// 路由过渡效果 仿照APP
+// 动画效果开始
+.tree{
+  background-color: @vis-ColorBgmain;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 999999999;
 }
