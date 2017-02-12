@@ -2,9 +2,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="<%= pkg.author %>"/>
+    <meta name="Copyright" content="<%= pkg.author %>"/>
+    <meta name="keywords" content="<%= pkg.keywords %>"/>
+    <meta name="description" content="<%= pkg.license %>"/>
+    <title>FXBTG手机端微官网</title>
+    <script src="js/flexible.js"></script><!-- 缩放屏幕比例 -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- 图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_10fchrgpf7x03sor.css">
+    <link rel="stylesheet" href="css/swiper.min.css"> <!-- 插件：滑动 -->
+    <link rel="stylesheet" href="css/vis-app.css"> <!-- 主框架文件 -->
+    <link rel="stylesheet" href="css/vis-do.css"> <!-- 插件：动画库 -->
+    <link rel="stylesheet" href="css/vis-index.css"> <!-- 首页专属样式表 -->
+    <script src="js/vue.min.js"></script><!-- vue -->
+    <script src="js/vue-router.min.js"></script><!-- 路由 -->
 </head>
 <body>
+<header>
+    <div class="container">
+        <div class="top-nav" id="main-nav">
+            <div class="box">
+关于信用卡入金支付方式暂停使用的通知
+            </div>
+        </div>
+    </div>
+</header>
+<div id="index">
+<link rel="stylesheet" href="css/vis-login.css"> <!-- 下载页样式表 -->
+<transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+    <div v-if="show">
+        <div class="container">
+   <div class="login" style="background: url('src/login-bg.jpg')">
 
+       <img src="src/me.jpg">
+       <div class="btn">请登录</div>
+
+
+   </div>
+</div>
+    </div>
+</transition>
+
+<div class="hide">
+<transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
+    <div v-if="!show" class="tree">
+            <div class="tree-list">
+                <h3><i class="visiis vis-notice"></i> 网站导航</h3>
+                <h4>关于</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">FXBTG 金融集团</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">为什么选择我们</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">监管与许可</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">企业荣誉</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">资金安全</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">社会责任</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">商业模式</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">联系我们</div></a>
+                </div>
+                <h4>商品</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">外汇</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">贵金属</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">能源</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">股指</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">农产品</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">差价合约</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">原油</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">其他</div></a>
+                </div>
+                <h4>下载</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">FXBTG 微单</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">MT4</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">资源下载</div></a>
+                </div>
+                <h4>视频</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">TNTV直播</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">每日一波</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">企业宣传片</div></a>
+                </div>
+                <h4>资讯</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">经济日历</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">每日分析</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">系统公告</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">财经资讯</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">活动中心</div></a>
+                </div>
+                <h4>帮助</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">新手常见问题</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">财务充值问题</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">交易常见问题</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">外汇问题</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">黄金问题</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">关于取款问题</div></a>
+                </div>
+                <h4>工具</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">查询IB</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">建议反馈</div></a>
+                </div>
+                <h4>我的</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="#"><div class="btn">登录 FXBTG</div></a>
+                    <a class="col nav-a" href="#"><div class="btn">立即开户</div></a>
+                </div>
+            </div>
+    </div>
+</transition>
+    </div>
+<footer>
+    <div id="foot">
+        <div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i
+                class="visiis vis-home"></i><h4>首页</h4></a><a class="col nav-a" href="down.html" data-rel="auto"><i
+                class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="intro.html" data-rel="auto"><i
+                class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i
+                class="visiis vis-me"></i><h4>我的</h4></a>
+            <a class="col more" @click="show = !show" href="#index"><i class="visiis vis-more"></i><h4>更多</h4></a>
+        </div>
+    </div>
+</footer>
+</div>
 </body>
+<!-- 主JS框架 -->
+<script src="js/zepto.min.js"></script><!-- zeptojs -->
+<!-- JS插件 -->
+<script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
 </html>
+<script>
+    /*============================================
+     顶部导航
+     ==============================================*/
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() < 10) {
+                $('#main-nav').removeClass('scrolled');
+            }
+            else {
+                $('#main-nav').addClass('scrolled');
+            }
+        });
+    });
+    /*============================================
+     滑动导航组件
+     ==============================================*/
+    new Vue({
+        el: '#index',
+        data: {
+            show: true
+        }
+    })
+
+</script>
+
