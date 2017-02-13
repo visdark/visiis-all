@@ -6,15 +6,15 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: .25rem;
+  padding-right: .25rem;
   box-sizing: border-box;
-  font-size: @vis-BtnFontSize;
+  font-size: @M;
   text-align: center;
   text-decoration: none;
   color: @vis-BtnFontColor;
-  line-height: unit(@vis-BtnHeight/@vis-BtnFontSize);
-  border-radius: @vis-BtnBorderRadius;
+  line-height: 1rem;
+  border-radius: 100px;
   .setTapColor();
   overflow: hidden;
   &:after {
@@ -28,7 +28,7 @@
     transform: scale(.5);
     transform-origin: 0 0;
     box-sizing: border-box;
-    border-radius: @vis-BtnBorderRadius*2;
+    border-radius: 100px;
   }
 }
 .vis-btn_inline {
@@ -48,7 +48,7 @@
 }
 
 .vis-btn_primary {
-  background-color: @vis-BtnPrimaryBg;
+  background-color: @vis-ColorBgmain;
   &:not(.vis-btn_disabled):visited {
     color: @vis-BtnFontColor;
   }
@@ -58,7 +58,7 @@
   }
 }
 .vis-btn_warn {
-  background-color: @vis-BtnWarnBg;
+  background-color: @vis-ColorFxbtg;
   &:not(.vis-btn_disabled):visited {
     color: @vis-BtnFontColor;
   }
@@ -187,7 +187,7 @@ button, input {
 
 /*gap between btn*/
 .vis-btn + .vis-btn {
-  margin-top: @vis-BtnDefaultGap;
+  margin-top: .25rem;
 }
 
 .vis-btn.vis-btn_inline + .vis-btn.vis-btn_inline {

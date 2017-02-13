@@ -2,28 +2,24 @@
 
 var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-  return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-};
-
-!function (t, e) {
-  "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.VueRouter = e();
-}(undefined, function () {
-  "use strict";
-
+var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (t) {
+  return typeof t === "undefined" ? "undefined" : _typeof2(t);
+} : function (t) {
+  return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t === "undefined" ? "undefined" : _typeof2(t);
+};!function (t, e) {
+  "object" === ("undefined" == typeof exports ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.VueRouter = e();
+}(void 0, function () {
   function t(t, e) {
     if (!t) throw new Error("[vue-router] " + e);
   }function e(t, e) {
     t || "undefined" != typeof console && console.warn("[vue-router] " + e);
   }function n(t, n) {
-    switch (typeof n === "undefined" ? "undefined" : _typeof(n)) {case "undefined":
+    switch ("undefined" == typeof n ? "undefined" : _typeof(n)) {case "undefined":
         return;case "object":
         return n;case "function":
         return n(t);case "boolean":
         return n ? t.params : void 0;default:
-        e(!1, 'props in "' + t.path + '" is a ' + (typeof n === "undefined" ? "undefined" : _typeof(n)) + ", expecting an object, function or boolean.");}
+        e(!1, 'props in "' + t.path + '" is a ' + ("undefined" == typeof n ? "undefined" : _typeof(n)) + ", expecting an object, function or boolean.");}
   }function r(t, n) {
     if (void 0 === n && (n = {}), t) {
       var r;try {
@@ -37,16 +33,16 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
   }function o(t) {
     var e = {};return (t = t.trim().replace(/^(\?|#|&)/, "")) ? (t.split("&").forEach(function (t) {
       var n = t.replace(/\+/g, " ").split("="),
-          r = $t(n.shift()),
-          o = n.length > 0 ? $t(n.join("=")) : null;void 0 === e[r] ? e[r] = o : Array.isArray(e[r]) ? e[r].push(o) : e[r] = [e[r], o];
+          r = St(n.shift()),
+          o = n.length > 0 ? St(n.join("=")) : null;void 0 === e[r] ? e[r] = o : Array.isArray(e[r]) ? e[r].push(o) : e[r] = [e[r], o];
     }), e) : e;
   }function i(t) {
     var e = t ? Object.keys(t).map(function (e) {
-      var n = t[e];if (void 0 === n) return "";if (null === n) return _t(e);if (Array.isArray(n)) {
+      var n = t[e];if (void 0 === n) return "";if (null === n) return Ct(e);if (Array.isArray(n)) {
         var r = [];return n.slice().forEach(function (t) {
-          void 0 !== t && (null === t ? r.push(_t(e)) : r.push(_t(e) + "=" + _t(t)));
+          void 0 !== t && (null === t ? r.push(Ct(e)) : r.push(Ct(e) + "=" + Ct(t)));
         }), r.join("&");
-      }return _t(e) + "=" + _t(n);
+      }return Ct(e) + "=" + Ct(n);
     }).filter(function (t) {
       return t.length > 0;
     }).join("&") : null;return e ? "?" + e : "";
@@ -60,14 +56,14 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
     var e = t.path,
         n = t.query;void 0 === n && (n = {});var r = t.hash;return void 0 === r && (r = ""), (e || "/") + i(n) + r;
   }function s(t, e) {
-    return e === St ? t === e : !!e && (t.path && e.path ? t.path.replace(Tt, "") === e.path.replace(Tt, "") && t.hash === e.hash && p(t.query, e.query) : !(!t.name || !e.name) && t.name === e.name && t.hash === e.hash && p(t.query, e.query) && p(t.params, e.params));
+    return e === Tt ? t === e : !!e && (t.path && e.path ? t.path.replace($t, "") === e.path.replace($t, "") && t.hash === e.hash && p(t.query, e.query) : !(!t.name || !e.name) && t.name === e.name && t.hash === e.hash && p(t.query, e.query) && p(t.params, e.params));
   }function p(t, e) {
     void 0 === t && (t = {}), void 0 === e && (e = {});var n = Object.keys(t),
         r = Object.keys(e);return n.length === r.length && n.every(function (n) {
       return String(t[n]) === String(e[n]);
     });
   }function f(t, e) {
-    return 0 === t.path.replace(Tt, "/").indexOf(e.path.replace(Tt, "/")) && (!e.hash || t.hash === e.hash) && h(t.query, e.query);
+    return 0 === t.path.replace($t, "/").indexOf(e.path.replace($t, "/")) && (!e.hash || t.hash === e.hash) && h(t.query, e.query);
   }function h(t, e) {
     for (var n in e) {
       if (!(n in t)) return !1;
@@ -90,7 +86,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
           return this.$root._route;
         } }), t.mixin({ beforeCreate: function beforeCreate() {
           this.$options.router && (this._router = this.$options.router, this._router.init(this), t.util.defineReactive(this, "_route", this._router.history.current));
-        } }), t.component("router-view", Et), t.component("router-link", Pt);var e = t.config.optionMergeStrategies;e.beforeRouteEnter = e.beforeRouteLeave = e.created;
+        } }), t.component("router-view", _t), t.component("router-link", Pt);var e = t.config.optionMergeStrategies;e.beforeRouteEnter = e.beforeRouteLeave = e.created;
     }
   }function v(t, e, n) {
     if ("/" === t.charAt(0)) return t;if ("?" === t.charAt(0) || "#" === t.charAt(0)) return e + t;var r = e.split("/");n && r[r.length - 1] || r.pop();for (var o = t.replace(/^\//, "").split("/"), i = 0; i < o.length; i++) {
@@ -136,22 +132,22 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
             w = "+" === v || "*" === v,
             b = "?" === v || "*" === v,
             x = n[2] || u,
-            k = d || y;r.push({ name: l || o++, prefix: h || "", delimiter: x, optional: b, repeat: w, partial: g, asterisk: !!m, pattern: k ? C(k) : m ? ".*" : "[^" + A(x) + "]+?" });
+            k = d || y;r.push({ name: l || o++, prefix: h || "", delimiter: x, optional: b, repeat: w, partial: g, asterisk: !!m, pattern: k ? A(k) : m ? ".*" : "[^" + j(x) + "]+?" });
       }
     }return i < t.length && (a += t.substr(i)), a && r.push(a), r;
   }function R(t, e) {
-    return j(k(t, e));
+    return E(k(t, e));
   }function O(t) {
     return encodeURI(t).replace(/[\/?#]/g, function (t) {
       return "%" + t.charCodeAt(0).toString(16).toUpperCase();
     });
-  }function E(t) {
+  }function _(t) {
     return encodeURI(t).replace(/[?#]/g, function (t) {
       return "%" + t.charCodeAt(0).toString(16).toUpperCase();
     });
-  }function j(t) {
+  }function E(t) {
     for (var e = new Array(t.length), n = 0; n < t.length; n++) {
-      "object" == _typeof(t[n]) && (e[n] = new RegExp("^(?:" + t[n].pattern + ")$"));
+      "object" === _typeof(t[n]) && (e[n] = new RegExp("^(?:" + t[n].pattern + ")$"));
     }return function (n, r) {
       for (var o = "", i = n || {}, a = r || {}, u = a.pretty ? O : encodeURIComponent, c = 0; c < t.length; c++) {
         var s = t[c];if ("string" != typeof s) {
@@ -167,39 +163,39 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
               if (p = u(f[h]), !e[c].test(p)) throw new TypeError('Expected all "' + s.name + '" to match "' + s.pattern + '", but received `' + JSON.stringify(p) + "`");o += (0 === h ? s.prefix : s.delimiter) + p;
             }
           } else {
-            if (p = s.asterisk ? E(f) : u(f), !e[c].test(p)) throw new TypeError('Expected "' + s.name + '" to match "' + s.pattern + '", but received "' + p + '"');o += s.prefix + p;
+            if (p = s.asterisk ? _(f) : u(f), !e[c].test(p)) throw new TypeError('Expected "' + s.name + '" to match "' + s.pattern + '", but received "' + p + '"');o += s.prefix + p;
           }
         } else o += s;
       }return o;
     };
-  }function A(t) {
+  }function j(t) {
     return t.replace(/([.+*?=^!:${}()[\]|\/\\])/g, "\\$1");
-  }function C(t) {
+  }function A(t) {
     return t.replace(/([=!:$\/()])/g, "\\$1");
-  }function _(t, e) {
+  }function C(t, e) {
     return t.keys = e, t;
-  }function $(t) {
+  }function S(t) {
     return t.sensitive ? "" : "i";
-  }function T(t, e) {
+  }function $(t, e) {
     var n = t.source.match(/\((?!\?)/g);if (n) for (var r = 0; r < n.length; r++) {
       e.push({ name: r, prefix: null, delimiter: null, optional: !1, repeat: !1, partial: !1, asterisk: !1, pattern: null });
-    }return _(t, e);
-  }function S(t, e, n) {
+    }return C(t, e);
+  }function T(t, e, n) {
     for (var r = [], o = 0; o < t.length; o++) {
       r.push(P(t[o], e, n).source);
-    }var i = new RegExp("(?:" + r.join("|") + ")", $(n));return _(i, e);
+    }var i = new RegExp("(?:" + r.join("|") + ")", S(n));return C(i, e);
   }function q(t, e, n) {
     return L(k(t, n), e, n);
   }function L(t, e, n) {
     Mt(e) || (n = e || n, e = []), n = n || {};for (var r = n.strict, o = n.end !== !1, i = "", a = 0; a < t.length; a++) {
-      var u = t[a];if ("string" == typeof u) i += A(u);else {
-        var c = A(u.prefix),
+      var u = t[a];if ("string" == typeof u) i += j(u);else {
+        var c = j(u.prefix),
             s = "(?:" + u.pattern + ")";e.push(u), u.repeat && (s += "(?:" + c + s + ")*"), s = u.optional ? u.partial ? c + "(" + s + ")?" : "(?:" + c + "(" + s + "))?" : c + "(" + s + ")", i += s;
       }
-    }var p = A(n.delimiter || "/"),
-        f = i.slice(-p.length) === p;return r || (i = (f ? i.slice(0, -p.length) : i) + "(?:" + p + "(?=$))?"), i += o ? "$" : r && f ? "" : "(?=" + p + "|$)", _(new RegExp("^" + i, $(n)), e);
+    }var p = j(n.delimiter || "/"),
+        f = i.slice(-p.length) === p;return r || (i = (f ? i.slice(0, -p.length) : i) + "(?:" + p + "(?=$))?"), i += o ? "$" : r && f ? "" : "(?=" + p + "|$)", C(new RegExp("^" + i, S(n)), e);
   }function P(t, e, n) {
-    return Mt(e) || (n = e || n, e = []), n = n || {}, t instanceof RegExp ? T(t, e) : Mt(t) ? S(t, e, n) : q(t, e, n);
+    return Mt(e) || (n = e || n, e = []), n = n || {}, t instanceof RegExp ? $(t, e) : Mt(t) ? T(t, e, n) : q(t, e, n);
   }function U(t) {
     var e,
         n,
@@ -234,7 +230,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
           return !t.optional;
         }).map(function (t) {
           return t.name;
-        });if ("object" != _typeof(o.params) && (o.params = {}), n && "object" == _typeof(n.params)) for (var s in n.params) {
+        });if ("object" !== _typeof(o.params) && (o.params = {}), n && "object" === _typeof(n.params)) for (var s in n.params) {
           !(s in o.params) && u.indexOf(s) > -1 && (o.params[s] = n.params[s]);
         }if (a) return o.path = V(a.path, o.params, 'named route "' + i + '"'), c(a, o, r);
       } else if (o.path) {
@@ -244,7 +240,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
       }return c(null, o);
     }function i(n, r) {
       var i = n.redirect,
-          u = "function" == typeof i ? i(a(n, r)) : i;if ("string" == typeof u && (u = { path: u }), !u || "object" != (typeof u === "undefined" ? "undefined" : _typeof(u))) return e(!1, "invalid redirect option: " + JSON.stringify(u)), c(null, r);var s = u,
+          u = "function" == typeof i ? i(a(n, r)) : i;if ("string" == typeof u && (u = { path: u }), !u || "object" !== ("undefined" == typeof u ? "undefined" : _typeof(u))) return e(!1, "invalid redirect option: " + JSON.stringify(u)), c(null, r);var s = u,
           p = s.name,
           h = s.path,
           l = r.query,
@@ -285,7 +281,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
       var i = e.options.scrollBehavior;i && (t("function" == typeof i, "scrollBehavior must be a function"), e.app.$nextTick(function () {
         var t = J(),
             e = i(n, r, o ? t : null);if (e) {
-          var a = "object" == (typeof e === "undefined" ? "undefined" : _typeof(e));if (a && "string" == typeof e.selector) {
+          var a = "object" === ("undefined" == typeof e ? "undefined" : _typeof(e));if (a && "string" == typeof e.selector) {
             var u = document.querySelector(e.selector);u ? t = K(u) : W(e) && (t = X(e));
           } else a && W(e) && (t = X(e));t && window.scrollTo(t.x, t.y);
         }
@@ -403,7 +399,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
   }function Rt(t, e, n) {
     var r = "hash" === n ? "#" + e : e;return t ? g(t + "/" + r) : r;
   }var Ot,
-      Et = { name: "router-view", functional: !0, props: { name: { type: String, default: "default" } }, render: function render(t, e) {
+      _t = { name: "router-view", functional: !0, props: { name: { type: String, default: "default" } }, render: function render(t, e) {
       var r = e.props,
           o = e.children,
           i = e.parent,
@@ -418,17 +414,17 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
         h.instances[u] === t.child && (h.instances[u] = void 0);
       }, a.props = n(c, h.props && h.props[u]), t(l, a, o);
     } },
-      jt = /[!'()*]/g,
-      At = function At(t) {
+      Et = /[!'()*]/g,
+      jt = function jt(t) {
     return "%" + t.charCodeAt(0).toString(16);
   },
-      Ct = /%2C/g,
-      _t = function _t(t) {
-    return encodeURIComponent(t).replace(jt, At).replace(Ct, ",");
+      At = /%2C/g,
+      Ct = function Ct(t) {
+    return encodeURIComponent(t).replace(Et, jt).replace(At, ",");
   },
-      $t = decodeURIComponent,
-      Tt = /\/?$/,
-      St = a(null, { path: "/" }),
+      St = decodeURIComponent,
+      $t = /\/?$/,
+      Tt = a(null, { path: "/" }),
       qt = [String, Object],
       Lt = [String, Array],
       Pt = { name: "router-link", props: { to: { type: qt, required: !0 }, tag: { type: String, default: "a" }, exact: Boolean, append: Boolean, replace: Boolean, activeClass: String, event: { type: Lt, default: "click" } }, render: function render(t) {
@@ -461,7 +457,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
       zt = P,
       Bt = k,
       Ht = R,
-      It = j,
+      It = E,
       Dt = L,
       Ft = new RegExp(["(\\\\.)", "([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))"].join("|"), "g");zt.parse = Bt, zt.compile = Ht, zt.tokensToFunction = It, zt.tokensToRegExp = Dt;var Nt = Object.create(null),
       Jt = Object.create(null),
@@ -472,7 +468,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
       Xt = Ut && window.performance && window.performance.now ? window.performance : Date,
       Yt = G(),
       Gt = function Gt(t, e) {
-    this.router = t, this.base = rt(e), this.current = St, this.pending = null, this.ready = !1, this.readyCbs = [];
+    this.router = t, this.base = rt(e), this.current = Tt, this.pending = null, this.ready = !1, this.readyCbs = [];
   };Gt.prototype.listen = function (t) {
     this.cb = t;
   }, Gt.prototype.onReady = function (t) {
@@ -497,7 +493,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
       return t.beforeEnter;
     }), lt(p));this.pending = t;var h = function h(e, n) {
       return r.pending !== t ? i() : void e(t, o, function (t) {
-        t === !1 ? (r.ensureURL(!0), i()) : "string" == typeof t || "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) ? ("object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t.replace ? r.replace(t) : r.push(t), i()) : n(t);
+        t === !1 ? (r.ensureURL(!0), i()) : "string" == typeof t || "object" === ("undefined" == typeof t ? "undefined" : _typeof(t)) ? ("object" === ("undefined" == typeof t ? "undefined" : _typeof(t)) && t.replace ? r.replace(t) : r.push(t), i()) : n(t);
       });
     };nt(f, h, function () {
       var n = [],
@@ -640,10 +636,8 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
         a = this.history.base,
         u = Rt(a, i, this.mode);return { location: r, route: o, href: u, normalizedTo: r, resolved: o };
   }, ee.prototype.addRoutes = function (t) {
-    this.matcher.addRoutes(t), this.history.current !== St && this.history.transitionTo(this.history.getCurrentLocation());
+    this.matcher.addRoutes(t), this.history.current !== Tt && this.history.transitionTo(this.history.getCurrentLocation());
   }, Object.defineProperties(ee.prototype, ne), ee.install = y, ee.version = "2.2.0", Ut && window.Vue && window.Vue.use(ee), ee;
 });
-
-//# sourceMappingURL=vue-router.min-compiled.js.map
 
 //# sourceMappingURL=vue-router.min-compiled-compiled.js.map

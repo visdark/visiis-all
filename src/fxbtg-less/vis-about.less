@@ -1,0 +1,71 @@
+// 初始化定义
+@import "./set";
+@import "./base";
+
+.logo{
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  display: block;
+}
+.wait{
+  text-align: center;
+  font-size: @M;
+  line-height: 1rem;
+}
+//内容页面排版
+.con{
+  padding: .5rem;
+  .news-list{
+    li{
+      list-style-type: none;
+      padding: .2rem 0;
+      position: relative;
+
+      a{
+        display: block;
+        color: black;
+        font-size: @M;
+        background-color: whitesmoke;
+        padding: .2rem;
+        border-bottom: solid 3px @vis-ColorBgmain;
+      }
+      span{
+        display: block;
+        background-color: whitesmoke;
+        color: darkgray;
+        font-size: @XS;
+        width: 100%;
+        text-align: center;
+        .ellipsis();
+        border: solid 1px gainsboro;
+        border-bottom: none;
+      }
+    }
+  }
+  h3{
+    text-align: center;
+    color: @vis-ColorFxbtg;
+    border-bottom: solid 1px gainsboro;
+    margin-bottom:.2rem ;
+  }
+  h4{
+    background-color: lightgrey;
+    padding: .2rem;
+  }
+  h5{
+    background-color: darkorange;
+    color: white;
+    font-size: @M;
+    line-height: 1.6;
+    padding: .25rem 0;
+    margin-bottom: .25rem;
+    display: block;
+    text-align: center;
+  }
+  P{
+    margin-bottom:.5rem ;
+  }
+  font-size: @M;
+  line-height: 2;
+}

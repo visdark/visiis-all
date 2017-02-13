@@ -1,7 +1,9 @@
 // 初始化定义
 @import "./set";
 @import "./base";
-
+.visiis {
+font-size: 100%;
+}
 
 html {
   -ms-text-size-adjust: 100%;
@@ -314,7 +316,6 @@ footer{padding-bottom: 1.6rem}
 // 动画效果开始
 
 .tree{
-  background-color: @vis-ColorBgmain;
   display: block;
   position: absolute;
   top: 0;
@@ -327,11 +328,10 @@ footer{padding-bottom: 1.6rem}
     margin: 0 auto;
     background-color: #e7e7e7;
     display: block;
-    
+    padding-bottom: 1.7rem;
     h3{
       font-size: @L;
       padding: .3rem;
-      width: 100%;
 
     }
     h4{
@@ -388,4 +388,114 @@ background-color: @vis-ColorFxbtg;
     height: 0;
     line-height: 0;
   }
+}
+
+//我的 导航
+#me-list{
+  text-align: center;
+  padding-bottom: .5rem;
+  padding-top: .2rem;
+  a{
+  color: black;}
+}
+
+.vis-cells {
+  margin-top: @vis-CellsMarginTop;
+  background-color: @vis-CellBg;
+  line-height: 2;
+  font-size: @L; //cell中间有效高度23px，跟客户端默认图标尺寸一致
+
+  overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
+
+  // onepx
+  position: relative;
+  &:before {
+    .setTopLine(@vis-CellBorderColor);
+  }
+  &:after {
+    .setBottomLine(@vis-CellBorderColor);
+  }
+}
+
+.vis-cells__title {
+  margin-top: .77em; // 15px - 行高
+  margin-bottom: .3em; // 8px - 行高
+  padding-left: @vis-CellGapH;
+  padding-right: @vis-CellGapH;
+  color: @vis-TextColorGray;
+  font-size: @vis-CellTipsFontSize;
+
+  & + .vis-cells {
+    margin-top: 0;
+  }
+}
+
+.vis-cells__tips {
+  margin-top: .3em; // 8px - 行高
+  color: @vis-TextColorGray;
+  padding-left: @vis-CellGapH;
+  padding-right: @vis-CellGapH;
+  font-size: @vis-CellTipsFontSize;
+}
+
+.vis-cell {
+  padding: @vis-CellGapV @vis-CellGapH;
+  position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
+  display: flex;
+  align-items: center;
+  &:before {
+    .setTopLine(@vis-CellBorderColor);
+    left: @vis-CellGapH;
+  }
+  &:first-child {
+    &:before {
+      display: none;
+    }
+  }
+}
+.vis-cell_primary{
+  align-items: flex-start;
+}
+.vis-cell__bd{
+  flex: 1;
+  .fa{
+    width: .6rem;
+  }
+}
+.vis-cell__ft {
+  text-align: right;
+  color: @vis-TextColorGray;
+}
+.vis-cell_access {
+  .setTapColor();
+  color: inherit;
+  &:active {
+    background-color: #ECECEC;
+  }
+  .vis-cell__ft {
+    padding-right: 13px;
+    position: relative;
+    &:after {
+      content: " ";
+      .setArrow(right, 6px, #C8C8CD, 2px);
+      position: absolute;
+      top: 50%;
+      margin-top: -4px;
+      right: 2px;
+    }
+  }
+}
+.vis-cell_link{
+  color: @vis-LinkColorDefault;
+  font-size: 14px;
+
+  // 由于vis-cell:first-child的:before为隐藏，所以这里要重新显示出来
+  &:first-child{
+    &:before{
+      display: block;
+    }
+  }
+}
+.fa{
+  text-align: center;
 }

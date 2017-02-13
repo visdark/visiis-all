@@ -1,0 +1,9 @@
+@@include('../include/header.html')
+
+<link rel="stylesheet" href="css/vis-about.css"> <!-- 下载页样式表 -->
+<transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+    <div v-if="show">
+        @@include('../include/关于我们.html')
+    </div>
+</transition>
+@@include('../include/footer.html')
