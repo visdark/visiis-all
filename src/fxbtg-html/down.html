@@ -18,18 +18,60 @@
     <link rel="stylesheet" href="css/vis-index.css"> <!-- 首页专属样式表 -->
     <script src="js/vue.min.js"></script><!-- vue -->
     <script src="js/vue-router.min.js"></script><!-- 路由 -->
+    <script>
+        /*******************************************
+         *
+         * 创建人：Quber（qubernet@163.com）
+         * 创建时间：2014年6月10日
+         * 创建说明：Base=>页面加载（loading）效果
+         *
+         * 修改人：
+         * 修改时间：
+         * 修改说明：
+         *
+         *********************************************/
+
+//获取浏览器页面可见高度和宽度
+        var _PageHeight = document.documentElement.clientHeight,
+                _PageWidth = document.documentElement.clientWidth;
+        //计算loading框距离顶部和左部的距离（loading框的宽度为215px，高度为61px）
+        var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
+                _LoadingLeft = _PageWidth > 61 ? (_PageWidth - 61) / 2 : 0;
+        //在页面未加载完毕之前显示的loading Html自定义内容
+        var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#f3f8ff;opacity:1;filter:alpha(opacity=80);z-index:9999999;"><div style="position: absolute; cursor1: wait; left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px; background: url(src/loading.gif) no-repeat scroll 5px 10px;"></div></div>';
+        //呈现loading效果
+        document.write(_LoadingHtml);
+
+        //window.onload = function () {
+        //    var loadingMask = document.getElementById('loadingDiv');
+        //    loadingMask.parentNode.removeChild(loadingMask);
+        //};
+
+        //监听加载状态改变
+        document.onreadystatechange = completeLoading;
+
+        //加载状态为complete时移除loading效果
+        function completeLoading() {
+            if (document.readyState == "complete") {
+                var loadingMask = document.getElementById('loadingDiv');
+                loadingMask.parentNode.removeChild(loadingMask);
+            }
+        }
+
+    </script>
 </head>
 <body>
 <header>
     <div class="container">
         <div class="top-nav" id="main-nav">
             <div class="box">
-关于信用卡入金支付方式暂停使用的通知
+                关于信用卡入金支付方式暂停使用的通知
             </div>
         </div>
     </div>
 </header>
-<div id="index">
+
+<div id="app">
 <link rel="stylesheet" href="css/vis-down.css"> <!-- 下载页样式表 -->
 <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
     <div v-if="show">
@@ -82,8 +124,8 @@
 </transition>
 
 <div class="hide">
-<transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
-    <div v-if="!show" class="tree">
+    <transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
+        <div v-if="!show" class="tree">
             <div class="tree-list">
                 <h3><i class="visiis vis-notice"></i> 网站导航</h3>
                 <h4>关于</h4>
@@ -148,9 +190,9 @@
                     <a class="col nav-a" href="reg.html"><div class="btn">立即开户</div></a>
                 </div>
             </div>
-    </div>
-</transition>
-    </div>
+        </div>
+    </transition>
+</div>
 <footer>
     <div id="foot">
         <div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i
@@ -158,7 +200,7 @@
                 class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="intro.html" data-rel="auto"><i
                 class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i
                 class="visiis vis-me"></i><h4>我的</h4></a>
-            <a class="col more" @click="show = !show" href="#index"><i class="visiis vis-more"></i><h4>更多</h4></a>
+            <a class="col more" @click="show = !show"  onclick="pageScroll()"><i class="visiis vis-more"></i><h4>更多</h4></a>
         </div>
     </div>
 </footer>
@@ -168,6 +210,9 @@
 <script src="js/zepto.min.js"></script><!-- zeptojs -->
 <!-- JS插件 -->
 <script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
+<script src="//cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script><!-- 插件：数据绑定支持 -->
+<script src="//cdn.bootcss.com/axios/0.15.3/axios.min.js"></script><!-- 插件：数据读写支持 -->
+
 </html>
 <script>
     /*============================================
@@ -184,14 +229,30 @@
         });
     });
     /*============================================
-     滑动导航组件
+     滚动到顶部js
+     ==============================================*/
+    function pageScroll(){
+//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+        window.scrollBy(0,-10000);
+//延时递归调用，模拟滚动向上效果
+        scrolldelay = setTimeout('pageScroll()',10000);
+//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+        var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+        if(sTop==0) clearTimeout(scrolldelay);
+    }
+</script>
+
+
+<script>
+    /*============================================
+     首页数据流
      ==============================================*/
     new Vue({
-        el: '#index',
+        el: '#app',
         data: {
             show: true
         }
     })
-
 </script>
 

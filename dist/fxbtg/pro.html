@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="Author" content="visdark"><meta name="Copyright" content="visdark"><meta name="keywords" content="关键字A,B,C"><meta name="description" content="MIT"><title>FXBTG手机端微官网</title><script src="js/flexible.js"></script><link rel="stylesheet" href="css/font-awesome.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_10fchrgpf7x03sor.css"><link rel="stylesheet" href="css/swiper.min.css"><link rel="stylesheet" href="css/vis-app.css"><link rel="stylesheet" href="css/vis-do.css"><link rel="stylesheet" href="css/vis-index.css"><script src="js/vue.min.js"></script><script src="js/vue-router.min.js"></script><script>function completeLoading(){if("complete"==document.readyState){var e=document.getElementById("loadingDiv");e.parentNode.removeChild(e)}}var _PageHeight=document.documentElement.clientHeight,_PageWidth=document.documentElement.clientWidth,_LoadingTop=_PageHeight>61?(_PageHeight-61)/2:0,_LoadingLeft=_PageWidth>61?(_PageWidth-61)/2:0,_LoadingHtml='<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:'+_PageHeight+'px;top:0;background:#f3f8ff;opacity:1;filter:alpha(opacity=80);z-index:9999999;"><div style="position: absolute; cursor1: wait; left: '+_LoadingLeft+"px; top:"+_LoadingTop+'px; width: auto; height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px; background: url(src/loading.gif) no-repeat scroll 5px 10px;"></div></div>';document.write(_LoadingHtml),document.onreadystatechange=completeLoading</script></head><body><header><div class="container"><div class="top-nav" id="main-nav"><div class="box">关于信用卡入金支付方式暂停使用的通知</div></div></div></header><div id="app"><link rel="stylesheet" href="css/vis-about.css"><transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight"><div v-if="show"><div class="container"><div class="wz"><a href="#" class="on">{{data.title}}</a><div class="clear"></div></div></div><section class="index"><div class="container"><div class="" id="pro-list"><div class="flex flex-box wrap avg-4 bordered"><template v-for="item in lists"><a v-bind:href="'pro.html#/pro/'+item.id" class="col pro"><img v-bind:src="item.img"> {{ item.title }}</a></template></div></div></div></section><div class="container"><router-view></router-view></div></div></transition><div class="hide"><transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight"><div v-if="!show" class="tree"><div class="tree-list"><h3><i class="visiis vis-notice"></i> 网站导航</h3><h4>关于</h4><div class="flex wrap avg-2"><a class="col nav-a" href="about.html"><div class="btn">FXBTG 金融集团</div></a><a class="col nav-a" href="about.html"><div class="btn">为什么选择我们</div></a><a class="col nav-a" href="about.html"><div class="btn">监管与许可</div></a><a class="col nav-a" href="about.html"><div class="btn">企业荣誉</div></a><a class="col nav-a" href="about.html"><div class="btn">资金安全</div></a><a class="col nav-a" href="about.html"><div class="btn">社会责任</div></a><a class="col nav-a" href="about.html"><div class="btn">商业模式</div></a><a class="col nav-a" href="about.html"><div class="btn">联系我们</div></a></div><h4>商品</h4><div class="flex wrap avg-2"><a class="col nav-a" href="pro.html"><div class="btn">外汇</div></a><a class="col nav-a" href="pro.html"><div class="btn">贵金属</div></a><a class="col nav-a" href="pro.html"><div class="btn">能源</div></a><a class="col nav-a" href="pro.html"><div class="btn">股指</div></a><a class="col nav-a" href="pro.html"><div class="btn">农产品</div></a><a class="col nav-a" href="pro.html"><div class="btn">差价合约</div></a><a class="col nav-a" href="pro.html"><div class="btn">原油</div></a><a class="col nav-a" href="pro.html"><div class="btn">其他</div></a></div><h4>下载</h4><div class="flex wrap avg-2"><a class="col nav-a" href="down.html"><div class="btn">FXBTG 微单</div></a><a class="col nav-a" href="down.html"><div class="btn">MT4</div></a><a class="col nav-a" href="down.html"><div class="btn">资源下载</div></a></div><h4>视频</h4><div class="flex wrap avg-2"><a class="col nav-a" href="TNTV.html"><div class="btn">TNTV直播</div></a><a class="col nav-a" href="intro.html"><div class="btn">每日一波</div></a><a class="col nav-a" href="video.html"><div class="btn">企业宣传片</div></a></div><h4>资讯</h4><div class="flex wrap avg-2"><a class="col nav-a" href="daylist.html"><div class="btn">经济日历</div></a><a class="col nav-a" href="day.html"><div class="btn">每日分析</div></a><a class="col nav-a" href="new.html"><div class="btn">系统公告</div></a><a class="col nav-a" href="imgnew.html"><div class="btn">财经资讯</div></a><a class="col nav-a" href="imgnew.html"><div class="btn">活动中心</div></a></div><h4>帮助</h4><div class="flex wrap avg-2"><a class="col nav-a" href="help.html"><div class="btn">新手常见问题</div></a><a class="col nav-a" href="help.html"><div class="btn">财务充值问题</div></a><a class="col nav-a" href="help.html"><div class="btn">交易常见问题</div></a><a class="col nav-a" href="help.html"><div class="btn">外汇问题</div></a><a class="col nav-a" href="help.html"><div class="btn">黄金问题</div></a><a class="col nav-a" href="help.html"><div class="btn">关于取款问题</div></a></div><h4>工具</h4><div class="flex wrap avg-2"><a class="col nav-a" href="IB.html"><div class="btn">查询IB</div></a><a class="col nav-a" href="book.html"><div class="btn">建议反馈</div></a></div><h4>我的</h4><div class="flex wrap avg-2"><a class="col nav-a" href="me.html"><div class="btn">登录 FXBTG</div></a><a class="col nav-a" href="reg.html"><div class="btn">立即开户</div></a></div></div></div></transition></div><footer><div id="foot"><div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i class="visiis vis-home"></i><h4>首页</h4></a><a class="col nav-a" href="down.html" data-rel="auto"><i class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="intro.html" data-rel="auto"><i class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i class="visiis vis-me"></i><h4>我的</h4></a><a class="col more" @click="show = !show" onclick="pageScroll()"><i class="visiis vis-more"></i><h4>更多</h4></a></div></div></footer></div></body><script src="js/zepto.min.js"></script><script src="js/swiper.min.js"></script><script src="//cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script><script src="//cdn.bootcss.com/axios/0.15.3/axios.min.js"></script></html><script>function pageScroll(){window.scrollBy(0,-1e4),scrolldelay=setTimeout("pageScroll()",1e4);var l=document.documentElement.scrollTop+document.body.scrollTop;0==l&&clearTimeout(scrolldelay)}$(document).ready(function(){$(window).scroll(function(){$(window).scrollTop()<10?$("#main-nav").removeClass("scrolled"):$("#main-nav").addClass("scrolled")})})</script><script>/*============================================
+     全局函数先定义
+     ==============================================*/
+    const User = {
+        template: `
+        <div>
+
+
+<div class="con"> <h1>{{data.lists[$route.params.key]["title"]}}{{data.lists[$route.params.key]["en"]}}</h1><div v-html="data.lists[$route.params.key]['con']"></div>
+<br/>
+ <a class="text-center" onclick="pageScroll()"><i class="fa fa-arrow-up" aria-hidden="true"></i>返回顶部</a>
+
+</div>
+
+
+
+        </div>`
+    };
+
+    const router = new VueRouter({
+        routes: [
+            { path: '/pro/:key', component: User }
+        ]
+    });
+    /*============================================
+     产品页数据流
+     ==============================================*/
+    var id = 0;
+    var data = {
+        key: 'pro',
+        id: id,
+        lists: [
+            {title:'外汇',con:`
+<p>FOREX和‘FX’是外汇（“foreign exchange”）的简称。</p>
+<p>外汇是指不同的国家货币之间的兑换。一国货币的价值相对于另外一国的货币可以总是在不断的变化。外汇交易者通过外汇市场买卖货币从而赚取利润。</p>
+<p>外汇市场是全球最大的投资市场，每日超过5万亿的资本流动。通过FXBTG的任意一款交易平台，投资者可以在周一至周五24小时不间断交易。</p>
+<p>在外汇市场可以投资包括欧元，美元，英镑，澳元，加元等全球主要流通货币以及其超过60多种交叉组合在内的交易产品，并享受FXBTG的优惠点差及优质服务。</p>
+<h3>外汇交易的优势</h3>
+<ul>
+<li>24小时在线交易</li>
+<li>杠杆高达400倍</li>
+<li>市场波动制造了许多交易机会</li>
+<li>可交易多达40多种货币对</li>
+</ul>
+<h3>现有货币</h3>
+<table class="table">
+      <caption>现有货币</caption>
+      <thead>
+        <tr>
+          <th>货币名称</th>
+          <th>符号</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>澳元</td>
+          <td>AUD</td>
+        </tr>
+        <tr>
+          <td>加元</td>
+          <td>CAD</td>
+        </tr>
+        <tr>
+          <td>瑞郎</td>
+          <td>CHF</td>
+        </tr>
+        <tr>
+          <td>捷克克朗</td>
+          <td>CZK</td>
+        </tr>
+        <tr>
+          <td>丹麦克郎</td>
+          <td>DKK</td>
+        </tr>
+         <tr>
+          <td>欧元</td>
+          <td>EUR</td>
+        </tr>
+         <tr>
+          <td>英镑</td>
+          <td>GBP</td>
+        </tr>
+         <tr>
+          <td>港元</td>
+          <td>HKD</td>
+        </tr>
+         <tr>
+          <td>日元</td>
+          <td>JPY</td>
+        </tr>
+	   <tr>
+          <td>挪威克朗</td>
+          <td>NOK</td>
+        </tr>
+	  <tr>
+          <td>纽元	</td>
+          <td>NZD</td>
+        </tr>
+         <tr>
+          <td>俄罗斯卢布</td>
+          <td>RUB</td>
+        </tr>
+         <tr>
+          <td>瑞典克郎</td>
+          <td>SEK</td>
+        </tr>
+         <tr>
+          <td>新元	</td>
+          <td>SGD</td>
+        </tr>
+         <tr>
+          <td>土耳其里拉</td>
+          <td>TRY</td>
+        </tr>
+	  <tr>
+          <td>美元</td>
+          <td>USD</td>
+        </tr>
+         <tr>
+          <td>南非兰特</td>
+          <td>ZAR</td>
+        </tr>
+      </tbody>
+    </table>
+            `,img:'src/p-1.png',id:'0',en:'FOREX'},
+            {title:'贵金属',con:`
+            <p>贵金属可透过即期场外市场进行买卖。贵金属是指拥有高经济价值的金属，并且被视为稀有的物品。由于其稀有的特性，同时可作为很多工业生产的原料，贵金属包括黄金及白银均被公认为最具高投资价值的物品。</p>
+
+<p>FXBTG的交易平台提供的即期市场的贵金属交易并不需要实际持有物品进行交割，如同外汇即期的场外市场交易，贵金属可透过保证金方式，以美元相对的报价形式执行买入或卖出。</p>
+
+<h3>贵金属交易的优势</h3>
+<ul>
+<li> 网上交易佣金低</li>
+<li>23小时在线交易</li>
+<li>杠杆高达100倍</li>
+<li>市场波动制造了许多交易机会</li>
+<li>一揽子贵金属兑美元</li>
+</ul>
+<h3>现有贵金属</h3>
+<table class="table">
+      <caption>现有贵金属</caption>
+      <thead>
+        <tr>
+          <th>贵金属名称</th>
+          <th>符号</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>黄金</td>
+          <td>XAUUSD</td>
+        </tr>
+        <tr>
+          <td>白银</td>
+          <td>XAGUSD</td>
+        </tr>
+      </tbody>
+    </table>
+`,img:'src/p-2.png',id:'1',en:'PRECIOUS METAL'},
+            {title:'能源',con:`
+            <h3>交易世界上最流行的能源产品。</h3>
+<p>能源的供应和需求情况受各种不同因素的影响，包括政治、环境、社会、投机和技术进步等。原油是在世界上最具流动性且交投活跃的能源产品。轻质油原油是公认的高品质、低密度、低硫原油，被认为是成品油定价的基准。</p>
+<p>原油市场由大量参与者构成，包括商业性能源企业、炼油厂、专业的能源交易商以及投机者等。</p>
+<p>在FXBTG平台上的原油投资者可以像进行货币日间交易那样在平台上新建和修改订单并结算交易。</p>
+
+<h3>交易时间</h3>
+<p>星期一至星期五，每天23个小时开市。</p>
+<h3>能源交易的优势</h3>
+<ul>
+<li>布伦特原油是世界上交易量最大的能源产品</li>
+<li>杠杆高达100倍</li>
+<li>因政治因素和环境因素会影响价格波动，从而制造了许多交易机会</li></ul>  `,img:'src/p-3.png',id:'2',en:'ENERGY'},
+            {title:'股指交易',con:`
+           <p>股票指数是衡量股票组合表现的一种方法，被各大新闻机构和金融服务公司用作基准指数。最常引用的股票指数由在各国最大证券交易所上公开上市的最大公司所组成，如美国标准普尔500指数、德国DAX指数、英国FTSE 100指数以及日本日经225指数等。被引用股票指数的表现可反映投资者对该国经济状态的情绪。</p>
+<p>指数一般是通过标准的期货合约，在期货交易所内进行交易的，并根据其未来预估价格进行买入或卖出操作。您可以通过FXBTG EXCHANGE，使用我们的“日间交易”进行指数的交易。通过我们的网上交易平台差价合约（CFD）模式进行指数交易就像货币交易一样简单。</p>
+
+<h3>股票指数交易的优势</h3>
+<ul>
+<li>期货或现货市场的替代品</li>
+<li>杠杆率高达100倍</li>
+<li>可对冲基本股票组合的风险</li>
+<li>永不过期</li>
+</ul>
+<table>
+      <caption>现有股票指数</caption>
+      <tbody>
+        <tr>
+          <td>基于沪深300指数的</td>
+          <td>CNH300</td>
+        </tr>
+        <tr>
+          <td>基于欧洲斯托克50指数的</td>
+          <td>EUSTX50</td>
+        </tr>
+         <tr>
+          <td>基于道琼斯30指数的 </td>
+          <td>US30</td>
+        </tr>
+         <tr>
+          <td>基于日经225指数的</td>
+          <td>JPN225</td>
+        </tr>
+         <tr>
+          <td>基于香港恒生指数的</td>
+          <td>HK50
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+            `,img:'src/p-4.png',id:'3',en:'INDEX'},
+            {title:'农产品',con:`暂无农产业业务支持，敬请期待`,img:'src/p-5.png',id:'4',en:''},
+            {title:'差价合约',con:`暂无差价合约介绍，敬请期待`,img:'src/p-6.png',id:'5',en:''},
+            {title:'原油',con:`详情请参照能源内容`,img:'src/p-7.png',id:'6',en:''},
+            {title:'其他',con:`敬请期待`,img:'src/p-8.png',id:'7',en:''}
+        ],
+        title: '产品中心',
+        items: [
+            {message: 'Foo' },
+            {message: 'Bar' }
+        ],
+        seen: true,
+        show: true
+    };
+
+    var app = new Vue({
+        el: '#app',
+        router,
+        data: data
+    });
+    app.$data === data ; // -> true</script>

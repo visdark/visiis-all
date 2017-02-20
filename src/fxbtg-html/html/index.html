@@ -1,5 +1,5 @@
-@@include('../include/header.html')
-<transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+@@include('../include/头部文件.html')
+<transition name="custom-classes-transition" enter-active-class="animated bounceIn" leave-active-class="animated bounceOutRight">
 <div v-if="show">
 @@include('../include/首页-焦点图.html')
 @@include('../include/首页-产品列表.html')
@@ -9,17 +9,7 @@
 @@include('../include/首页-每日推送.html')
 </div>
 </transition>
-
-
-
-
-
-
-
-
-
-
-@@include('../include/footer.html')
+@@include('../include/页脚文件.html')
 
 <script>
     /*============================================
@@ -29,4 +19,13 @@
         pagination: '.swiper-pagination',
         paginationClickable: true
     });
+    /*============================================
+     首页数据流
+     ==============================================*/
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    })
 </script>

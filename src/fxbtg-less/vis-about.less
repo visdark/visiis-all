@@ -16,6 +16,56 @@
 //内容页面排版
 .con{
   padding: .5rem;
+  h1 {
+    font-size: .7rem;
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-bottom: 20px;
+    li{list-style-type: none;
+      padding: .2rem 0;
+      border-bottom: dashed 1px  #ddd}
+  }
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    border: 1px solid #ddd;
+    thead {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+      tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        th {
+          vertical-align: bottom;
+          border-bottom: 2px solid #ddd;
+        }
+      }
+    }
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+      tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        td {
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+          border: 1px solid #ddd;
+          display: table-cell;
+        }
+      }
+    }
+  }
   .news-list{
     li{
       list-style-type: none;

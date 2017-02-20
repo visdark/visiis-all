@@ -29,4 +29,41 @@
         </div>
     </div>
 </header>
+<div class="container">
+    <div class="con">
+        <div id="app">
+             <span v-bind:title="title">
+    {{ message }}
+  </span>
+            <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+            <p v-if="seen">
+                {{ message2 }}
+                <div v-for="todo in todos">
+                    {{ todo.text }}
+                </div>
+            </p>
+</transition>
+
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+            <p>
+            双向绑定输入
+            <input v-model="message"></p>
+            <p>效果按钮
+            <button v-on:click="reverseMessage">Reverse Message</button>
+            </p>
+            <div>
+            这里是数据
+            <ol>
+                <!-- Create an instance of the todo-item component -->
+                <todo-item v-for="item in aboutList" v-bind:todo="item"></todo-item>
+            </ol>
+            这里是数据
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="index">

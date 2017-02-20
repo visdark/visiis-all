@@ -78,7 +78,7 @@ gulp.task('min-css',function() {
 // 监视自动化
 gulp.task('watch',function(){
     gulp.watch(['./src/fxbtg-less/vis-*.less','./src/fxbtg-less/vis-*.css'],['min-css']);
-    gulp.watch(['./src/fxbtg-html/html/*.html','./src/fxbtg-html/include/**.html'],['include']);
+    gulp.watch(['./src/fxbtg-html/html/*.html','./src/fxbtg-html/include/*.html'],['include']);
     gulp.watch(['include'],['min-html']);
     gulp.watch('./src/fxbtg-html/*.html',['min-html']);
 });

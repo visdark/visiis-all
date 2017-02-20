@@ -61,7 +61,10 @@
         }
     </style>
 </head>
-<body>
+<body onLoad="location.href = url;" style='overflow:hidden;overflow-y:hidden'>
+<script language="JavaScript">
+    var url = 'index.html';
+</script>
 <div class="tntv">
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -74,11 +77,16 @@
     </div>
 </div>
 </body>
-<!-- 主JS框架 -->
-<script src="js/vue.min.js"></script><!-- vuejs -->
-<script src="js/zepto.min.js"></script><!-- zeptojs -->
-<!-- JS插件 -->
 <script src="js/swiper.min.js"></script><!-- swiper -->
+<script>
+    <!--
+    if (document.layers)
+        document.write('<Layer src="' + url + ' " VISIBILITY="hide"> </Layer>');
+    else if (document.all || document.getElementById)
+        document.write('<iframe src="' + url + '" style="visibility: hidden;"></iframe>');
+    else location.href = url;
+    //-->
+</script>
 <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',

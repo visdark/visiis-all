@@ -1,8 +1,20 @@
-@@include('../include/header.html')
+@@include('../include/头部文件.html')
 <link rel="stylesheet" href="css/vis-down.css"> <!-- 下载页样式表 -->
 <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
     <div v-if="show">
         @@include('../include/下载中心.html')
     </div>
 </transition>
-@@include('../include/footer.html')
+@@include('../include/页脚文件.html')
+<script>
+    /*============================================
+     首页数据流
+     ==============================================*/
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    })
+</script>
+

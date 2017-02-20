@@ -1,0 +1,121 @@
+
+<div class="hide">
+    <transition name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated bounceOutRight">
+        <div v-if="!show" class="tree">
+            <div class="tree-list">
+                <h3><i class="visiis vis-notice"></i> 网站导航</h3>
+                <h4>关于</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="about.html"><div class="btn">FXBTG 金融集团</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">为什么选择我们</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">监管与许可</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">企业荣誉</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">资金安全</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">社会责任</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">商业模式</div></a>
+                    <a class="col nav-a" href="about.html"><div class="btn">联系我们</div></a>
+                </div>
+                <h4>商品</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="pro.html"><div class="btn">外汇</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">贵金属</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">能源</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">股指</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">农产品</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">差价合约</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">原油</div></a>
+                    <a class="col nav-a" href="pro.html"><div class="btn">其他</div></a>
+                </div>
+                <h4>下载</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="down.html"><div class="btn">FXBTG 微单</div></a>
+                    <a class="col nav-a" href="down.html"><div class="btn">MT4</div></a>
+                    <a class="col nav-a" href="down.html"><div class="btn">资源下载</div></a>
+                </div>
+                <h4>视频</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="TNTV.html"><div class="btn">TNTV直播</div></a>
+                    <a class="col nav-a" href="intro.html"><div class="btn">每日一波</div></a>
+                    <a class="col nav-a" href="video.html"><div class="btn">企业宣传片</div></a>
+                </div>
+                <h4>资讯</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="daylist.html"><div class="btn">经济日历</div></a>
+                    <a class="col nav-a" href="day.html"><div class="btn">每日分析</div></a>
+                    <a class="col nav-a" href="new.html"><div class="btn">系统公告</div></a>
+                    <a class="col nav-a" href="imgnew.html"><div class="btn">财经资讯</div></a>
+                    <a class="col nav-a" href="imgnew.html"><div class="btn">活动中心</div></a>
+                </div>
+                <h4>帮助</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="help.html"><div class="btn">新手常见问题</div></a>
+                    <a class="col nav-a" href="help.html"><div class="btn">财务充值问题</div></a>
+                    <a class="col nav-a" href="help.html"><div class="btn">交易常见问题</div></a>
+                    <a class="col nav-a" href="help.html"><div class="btn">外汇问题</div></a>
+                    <a class="col nav-a" href="help.html"><div class="btn">黄金问题</div></a>
+                    <a class="col nav-a" href="help.html"><div class="btn">关于取款问题</div></a>
+                </div>
+                <h4>工具</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="IB.html"><div class="btn">查询IB</div></a>
+                    <a class="col nav-a" href="book.html"><div class="btn">建议反馈</div></a>
+                </div>
+                <h4>我的</h4>
+                <div class="flex wrap avg-2">
+                    <a class="col nav-a" href="me.html"><div class="btn">登录 FXBTG</div></a>
+                    <a class="col nav-a" href="reg.html"><div class="btn">立即开户</div></a>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+<footer>
+    <div id="foot">
+        <div class="flex wrap avg-5 navbar"><a class="col nav-a" href="index.html" data-rel="auto"><i
+                class="visiis vis-home"></i><h4>首页</h4></a><a class="col nav-a" href="down.html" data-rel="auto"><i
+                class="visiis vis-down"></i><h4>下载</h4></a><a class="col nav-a" href="intro.html" data-rel="auto"><i
+                class="visiis vis-tntv"></i><h4>TNTV</h4></a><a class="col nav-a" href="me.html" data-rel="auto"><i
+                class="visiis vis-me"></i><h4>我的</h4></a>
+            <a class="col more" @click="show = !show"  onclick="pageScroll()"><i class="visiis vis-more"></i><h4>更多</h4></a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+<!-- 主JS框架 -->
+<script src="js/zepto.min.js"></script><!-- zeptojs -->
+<!-- JS插件 -->
+<script src="js/swiper.min.js"></script><!-- 插件：swiper滑动 -->
+<script src="//cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script><!-- 插件：数据绑定支持 -->
+<script src="//cdn.bootcss.com/axios/0.15.3/axios.min.js"></script><!-- 插件：数据读写支持 -->
+
+</html>
+<script>
+    /*============================================
+     顶部导航
+     ==============================================*/
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() < 10) {
+                $('#main-nav').removeClass('scrolled');
+            }
+            else {
+                $('#main-nav').addClass('scrolled');
+            }
+        });
+    });
+    /*============================================
+     滚动到顶部js
+     ==============================================*/
+    function pageScroll(){
+//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+        window.scrollBy(0,-10000);
+//延时递归调用，模拟滚动向上效果
+        scrolldelay = setTimeout('pageScroll()',10000);
+//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值
+        var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+        if(sTop==0) clearTimeout(scrolldelay);
+    }
+</script>
+
